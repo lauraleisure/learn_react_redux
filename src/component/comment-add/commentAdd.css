@@ -1,0 +1,35 @@
+.app-container{
+    position: relative;
+}
+.title{
+    line-height: 3.14rem;
+}
+.form-group{
+    padding: 0.714rem;
+    background: #f9f9f9;
+}
+.form-input{
+    width: 77%;
+}
+.form-input input{
+    height: 2.5rem;
+}
+.form-input input,.form-input textarea{
+    font-size: 1rem;
+    line-height: 2.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding:0 0.714rem;
+}
+.form-group.submitBtn{
+    padding: 0;
+    width: 88%;
+    margin: 1rem auto;
+}
+.form-group button{
+    font-size: 1.07rem;
+    width: 100%;
+    line-height: 3.14rem;
+    background: #00a651;
+    color: #fff;
+}
