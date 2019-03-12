@@ -2,6 +2,7 @@
   "name": "learn_react_redux",
   "version": "1.0.0",
   "description": "",
+  "private": true,
   "main": "index.js",
   "dependencies": {
     "axios": "^0.18.0",
