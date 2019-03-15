@@ -1,12 +1,12 @@
 import React,{Component} from 'react'
 import './commentList.css'
-import  CommentItem from '../comment-item/comment-item'
+import  CommentItem from '../comment/comment-item'
 import PropTypes from 'prop-types'
 
 export default class CommentList extends Component{
 
     /*给组件类指定属性*/
-    static prototypes={
+    static propTypes={
         comments:PropTypes.array.isRequired,
         deleteComment:PropTypes.func.isRequired,
     }

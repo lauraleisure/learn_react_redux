@@ -1,12 +1,12 @@
 import React,{Component} from 'react'
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux'
-import CommentAdd from '../../component/comment-add/comment-add'
-import CommentList from '../../component/comment-list/comment-list'
-import {addComment,deleteComment,getComments} from '../../redux/actionCreators'
-import './app.css'
+import CommentAdd from '../../component/comment/comment-add'
+import CommentList from '../../component/comment/comment-list'
+import {addComment,deleteComment,getComments} from '../../redux/comment/actionCreators'
+import './comment.css'
 
- class App extends Component{
+class Comment extends Component{
 
     static  propTypes={
         comments:PropTypes.array.isRequired,
@@ -17,12 +17,12 @@ import './app.css'
     }
     componentDidMount(){
         /*异步获取所有评论数组*/
-        this.props.getComments()
+        this.props.getComments();
     }
 
 
      render(){
-          return (<div className='app-container scrollDiv'>
+          return (<div className='commentPage scrollDiv'>
              <div className='title'>请发表对React的评论</div>
               <CommentAdd addComment={this.props.addComment} />
               <CommentList comments={this.props.comments} deleteComment={this.props.deleteComment}/>
@@ -31,4 +31,4 @@ import './app.css'
 }
 
 export default connect(state=>({comments:state.comments}),
-    {addComment,deleteComment,getComments})(App)
+    {addComment,deleteComment,getComments})(Comment)

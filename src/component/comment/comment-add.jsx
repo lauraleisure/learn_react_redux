@@ -3,15 +3,9 @@ import PropTypes from 'prop-types'
 import './commentAdd.css'
 
 export default class CommentAdd extends Component{
-    constructor(props){
-        super(props);
-        this.state={
-            username:'',
-            content:'',
-        }
-        // this.handleSumbit=this.handleSumbit.bind(this);
-    }
-
+    state={
+        username:'',content:''
+    };
     static propTypes={
         addComment:PropTypes.func.isRequired
     }

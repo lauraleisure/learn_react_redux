@@ -72,10 +72,17 @@ a:link, a:active, a:visited, a:hover {
     -webkit-overflow-scrolling: touch;
     height: 100%;
 }
-
+.container{
+    position: relative;
+}
+.pages{
+    position: relative;
+   /* width: 100%;*/
+}
 .noScrollDiv {
     height: 100%;
     overflow: hidden;
+    box-sizing: border-box;
 }
 a {
     text-decoration: none !important;
