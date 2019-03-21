@@ -4,11 +4,13 @@
   根据老的状态产生新的状态，交给store来更新状态
 * */
 const initLayout={
-    showCrumb:false,
+    title:'',
+    showCrumb:true,
     showNav:true
 }
 function layoutConfig(state=initLayout,action) {
     switch (action.type) {
+
         default:
             return {...state};
     }

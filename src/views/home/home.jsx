@@ -2,8 +2,8 @@ import React,{Component} from 'react'
 import PropTypes from 'prop-types';
 import {connect} from "react-redux";
 
-import Layout from '../../component/page_layout/layout/layout'
 import Avatar from '../../component/user/avatar'
+import HomeNav from '../../component/page_layout/nav/home_nav'
 import './home.css'
 
 class Home extends Component{
@@ -24,6 +24,7 @@ class Home extends Component{
                   })}
               </div>
           </div>
+              <HomeNav/>
           </div>)
      }
 }

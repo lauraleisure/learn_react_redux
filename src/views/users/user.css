@@ -1,0 +1,16 @@
+.item-part{
+    margin-bottom: 1rem;
+}
+.user-wrapper .set-sex{
+      width: 30%;
+}
+.user-wrapper .photo{
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+}
+.user-wrapper .photo img{
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}

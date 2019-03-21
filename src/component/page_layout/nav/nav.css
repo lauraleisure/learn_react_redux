@@ -39,6 +39,9 @@ dd{
     background: url("/images/nav/icon-user.png") center center no-repeat;
     background-size:auto 1.32rem;
 }
+.icon dd{
+    color: #868686;
+}
 .icon.active dd{
     color: #00B8D5;
 }

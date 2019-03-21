@@ -10,21 +10,23 @@ import {connect} from "react-redux";
 
 class Layout extends Component{
     static propTypes={
+        title:PropTypes.string,
         showCrumb:PropTypes.bool,
         showNav:PropTypes.bool
     }
 
     render(){
         return (<div className='container noScrollDiv'>
-            {this.props.showCrumb&&<Crumb/>}
+            {this.props.showCrumb&&<Crumb title={this.props.title}/>}
+
             {this.props.showNav?<HomeNav>
-                {this.props.children}
-            </HomeNav>:this.props.children}
+                {React.cloneElement(this.props.children)}
+                </HomeNav> :React.cloneElement(this.props.children)}
         </div>)
     }
 }
 
-export default connect(state=>({showCrumb:state.layoutConfig.showCrumb,showNav:state.layoutConfig.showNav}),
+export default connect(state=>({showCrumb:state.layoutConfig.showCrumb,showNav:state.layoutConfig.showNav,title:state.crumbs.title}),
     null)(Layout)
 
 

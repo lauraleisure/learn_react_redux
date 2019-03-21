@@ -1,8 +1,6 @@
 import {combineReducers} from 'redux'
 
-import comments from './comment/reducers';
-/*import crumbs from './crumb/reducers';*/
-import navTabs from './nav/reducers';
+import comments from '../views/comment/redux/reducers';
 import userAvatar from '../component/user/redux/reducers'
 import crumbs from '../component/page_layout/crumb/redux/reducers'
 import layoutConfig from '../component/page_layout/layout/redux/reducers'
@@ -14,4 +12,4 @@ import userDetail from '../views/users/redux/reducers'
   根据老的状态产生新的状态，交给store来更新状态
 * */
 
-export default combineReducers({crumbs,layoutConfig,nav,home,comments,navTabs,userAvatar,userDetail})
+export default combineReducers({crumbs,layoutConfig,nav,home,comments,userAvatar,userDetail})
