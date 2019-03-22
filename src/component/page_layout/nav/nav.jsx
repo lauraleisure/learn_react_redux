@@ -5,15 +5,15 @@ import {connect} from "react-redux";
 
 import './nav.css'
 
-class MyNav extends Component{
+class Nav extends Component{
     static propTypes={
-        tabs:PropTypes.array.isRequired        
+        tabs:PropTypes.array
     }
     
      render(){
          return (<div className='pages noScrollDiv'>
-             {this.props.children}
-             {this.props.tabs.length>0&&<div className='nav_container flex-box jc-s ai-c' >
+             {this.props.children?React.cloneElement(this.props.children):null}
+             {this.props.tabs.length>0&&<div  className='nav_container flex-box jc-s ai-c'>
                  {this.props.tabs.map((tab,index)=>{
                      return <NavLink key={index} className={'icon '+tab.class} style={{width:tab.width}} to={tab.url}>
                          <dl>
@@ -23,8 +23,10 @@ class MyNav extends Component{
                      </NavLink>
                  })}
              </div>}
+
+
          </div>)
      }
 }
 
-export default connect(state=>({tabs:state.nav.myNav}), null)(MyNav)
+export default connect(state=>({tabs:state.nav}), null)(Nav)

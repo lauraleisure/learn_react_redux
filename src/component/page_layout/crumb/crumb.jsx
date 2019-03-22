@@ -7,7 +7,7 @@ import './crumb.css'
 
 class Crumb extends Component{
     static propTypes={
-        title:PropTypes.string.isRequired,
+        title:PropTypes.string,
         goBack:PropTypes.func.isRequired,
         logout:PropTypes.func.isRequired,
     }
@@ -17,7 +17,6 @@ class Crumb extends Component{
     logout=()=>{
         this.props.logout('/logout');
     }
-    
      render(){
          return (<div className='crumb-part flex-box jc-s ai-c'>
              <div  className={this.props.goBack?'goBack':''} onClick={this.props.goBack?this.props.goBack:null}> </div>
@@ -27,5 +26,5 @@ class Crumb extends Component{
      }
 }
 
-export default connect(state=>({title:state.crumbs.title}),
+export default connect(state=>({title:state.crumbs}),
     {goBack,logout})(Crumb)

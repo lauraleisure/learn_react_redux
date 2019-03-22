@@ -3,6 +3,9 @@ import PropTypes from 'prop-types'
 import {connect} from "react-redux";
 
 import Layout from '../../component/page_layout/layout/layout'
+import {setTitle} from '../../component/page_layout/crumb/redux/actionCreators'
+import {setLayout} from '../../component/page_layout/layout/redux/actionCreators'
+import {myNav} from '../../component/page_layout/nav/redux/actionCreators'
 import './user.css'
 
 class UserDetail extends Component{
@@ -29,7 +32,14 @@ class UserDetail extends Component{
 
         this.setState(obj);
     }
-
+    componentDidMount(){
+       this.props.setTitle('个人信息');
+       this.props.setLayout({
+           showCrumb:true,
+           showNav:true
+       });
+       this.props.myNav();
+    }
      render(){
          return (<Layout>
                    <div className='user-wrapper'>
@@ -83,4 +93,4 @@ class UserDetail extends Component{
 }
 
 export default connect(state=>({user:state.userDetail}),
-    null)(UserDetail)
+    {setTitle,setLayout,myNav})(UserDetail)

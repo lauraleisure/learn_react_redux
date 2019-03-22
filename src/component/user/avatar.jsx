@@ -1,10 +1,11 @@
 import React,{Component} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from "react-redux";
-
+import {NavLink} from 'react-router-dom'
 
 import {userDetail} from './redux/actionCreators'
 import './user.css'
+
 
 
 class Avatar extends Component{
@@ -28,7 +29,7 @@ class Avatar extends Component{
                   <div className='real-name'>{this.props.user.realName}</div>
                   <div className='phone'>{this.props.user.phone}</div>
                </div>
-              <div className='settings'><a href="#"></a></div>
+              <NavLink to='/my' ><div className='settings'> </div></NavLink>
           </div>)
      }
 }

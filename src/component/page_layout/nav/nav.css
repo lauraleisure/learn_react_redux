@@ -39,6 +39,10 @@ dd{
     background: url("/images/nav/icon-user.png") center center no-repeat;
     background-size:auto 1.32rem;
 }
+.icon.icon-my.active dt{
+    background: url("/images/nav/icon-user-a.png") center center no-repeat;
+    background-size:auto 1.32rem;
+}
 .icon dd{
     color: #868686;
 }
