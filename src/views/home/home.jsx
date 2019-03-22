@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 import Layout from '../../component/page_layout/layout/layout'
 import Avatar from '../../component/user/avatar'
 
-import {setTitle} from '../../component/page_layout/crumb/redux/actionCreators'
+import {setCrumb} from '../../component/page_layout/crumb/redux/actionCreators'
 import {setLayout} from '../../component/page_layout/layout/redux/actionCreators'
 import {homeNav} from '../../component/page_layout/nav/redux/actionCreators'
 
@@ -16,7 +16,7 @@ class Home extends Component{
         iconList:PropTypes.array.isRequired
     }
     componentDidMount(){
-       /* this.props.setTitle('首页');*/
+        /*  this.props.setCrumb({title:'首页',hasGoBack:true,hasLogout:false});*/
         this.props.setLayout({
             showCrumb:false,
             showNav:true
@@ -43,4 +43,4 @@ class Home extends Component{
 }
 
 export default connect(state=>({iconList:state.home}),
-    {setTitle,setLayout,homeNav})(Home)
+    {setCrumb,setLayout,homeNav})(Home)

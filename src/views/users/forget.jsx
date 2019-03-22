@@ -10,10 +10,7 @@ import './user.css'
 
 class UserDetail extends Component{
     state={
-        realName:'Leisure',
-        sex:'female',
-        phone:'18162779238',
-        photo:'/images/user/user.jpg',
+        phone:'',
         code:'',
         pwd:'',
         repwd:'',
@@ -33,10 +30,10 @@ class UserDetail extends Component{
         this.setState(obj);
     }
     componentDidMount(){
-       this.props.setCrumb({title:'个人信息',hasGoBack:true,hasLogout:true});
+        this.props.setCrumb({title:'找回密码',hasGoBack:true,hasLogout:false});
        this.props.setLayout({
            showCrumb:true,
-           showNav:true
+           showNav:false
        });
        this.props.myNav();
     }
@@ -45,23 +42,17 @@ class UserDetail extends Component{
                    <div className='user-wrapper'>
                        <div className='item-part bg-w'>
                            <div className='items halfpxline_before halfpxline_after flex-box jc-s ai-c'>
-                               <div className='txt-title'>头像</div>
-                               <div className='txt-cont photo'><img src={this.props.user.photo} alt=""/></div>
-                           </div>
-                           <div className='items halfpxline_after flex-box jc-s ai-c'>
-                               <div className='txt-title'>姓名</div>
-                               <div className='txt-cont'>{this.props.user.realName}</div>
-                           </div>
-                           <div className='items halfpxline_after flex-box jc-s ai-c'>
-                               <div className='txt-title'>性别</div>
-                               <div className='txt-cont set-sex flex-box jc-s ai-c '>
-                                   <input type='radio' id='sex.male' value='male' checked={this.state.sex=='male'?true:false} onChange={this.changeVal.bind(this)}/>男
-                                   <input type='radio' id='sex.female' value='female' checked={this.state.sex=='female'?true:false} onChange={this.changeVal.bind(this)}/>女
+                               <div className='txt-title'>手机号</div>
+                               <div className='txt-cont'>
+                                   <input id='phone' className='text-right' type='text' value={this.state.phone} placeholder='输入手机号' onChange={this.changeVal.bind(this)}/>
                                </div>
                            </div>
                            <div className='items halfpxline_after flex-box jc-s ai-c'>
-                               <div className='txt-title'>手机号</div>
-                               <div className='txt-cont'>{this.props.user.phone}</div>
+                               <div className='txt-title '>校验码</div>
+                               <div className='txt-cont'>
+                                   <input id='validateCode' className='text-right' type='text' value={this.state.code} placeholder='输入校验码' onChange={this.changeVal.bind(this)}/>
+                                   <button className='bg-blue white-text getCode'>校验码</button>
+                               </div>
                            </div>
                            <div className='items halfpxline_after flex-box jc-s ai-c'>
                                <div className='txt-title '>验证码</div>
@@ -74,7 +65,7 @@ class UserDetail extends Component{
                        <div className='item-part bg-w'>
 
                            <div className='items halfpxline_after flex-box jc-s ai-c'>
-                               <div className='txt-title'>设置密码</div>
+                               <div className='txt-title'>新密码</div>
                                <div className='txt-cont'><input id='pwd' className='text-right' type='password' value={this.state.pwd} placeholder='填写登录密码' onChange={this.changeVal.bind(this)}/></div>
                            </div>
                            <div className='items halfpxline_after flex-box jc-s ai-c'>
@@ -83,7 +74,7 @@ class UserDetail extends Component{
                            </div>
                        </div>
                        <div className='item-part sub-btn'>
-                           <button className='submitBtn'>确认修改</button>
+                           <button className='submitBtn'>提交</button>
                        </div>
                  </div>
 

@@ -6,7 +6,7 @@ import CommentAdd from '../../component/comment/comment-add'
 import CommentList from '../../component/comment/comment-list'
 import  Layout from '../../component/page_layout/layout/layout'
 import {addComment,deleteComment,getComments} from './redux/actionCreators'
-import {setTitle} from '../../component/page_layout/crumb/redux/actionCreators'
+import {setCrumb} from '../../component/page_layout/crumb/redux/actionCreators'
 import {setLayout} from '../../component/page_layout/layout/redux/actionCreators'
 import {homeNav} from '../../component/page_layout/nav/redux/actionCreators'
 import './comment.css'
@@ -28,7 +28,7 @@ class Comment extends Component{
             showCrumb:true,
             showNav:true
         });
-        this.props.setTitle('评论列表');
+        this.props.setCrumb({title:'评论列表',hasGoBack:true,hasLogout:true});
         this.props.homeNav();
     }
 
@@ -45,4 +45,4 @@ class Comment extends Component{
 }
 
 export default connect(state=>({comments:state.comments}),
-    {addComment,deleteComment,getComments,setTitle,setLayout,homeNav})(Comment)
+    {addComment,deleteComment,getComments,setCrumb,setLayout,homeNav})(Comment)

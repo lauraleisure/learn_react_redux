@@ -179,6 +179,9 @@ textarea::-webkit-input-placeholder {
 .jc-s{
     justify-content: space-between;
 }
+.jc-c{
+    justify-content: center;
+}
 .jc-e{
     justify-content: flex-end;
 }
@@ -256,4 +259,19 @@ textarea::-webkit-input-placeholder {
     color: #fff;
     font-size: 1.07rem;
     border-radius: 0.286rem;
+}
+.checkBox {
+    display: inline-block;
+    width: 1.1rem;
+    height: 1.1rem;
+    border: 1px solid #868686;
+    margin-right: 0.714rem;
+}
+.checkBox.circle{
+    border-radius: 50%;
+}
+.checkBox.checked{
+    background: #00B8D5 url('/images/checked.png') center no-repeat;
+    background-size:  1rem auto;
+    border: 1px solid #00B8D5;
 }
