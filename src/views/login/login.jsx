@@ -20,13 +20,18 @@ class Login extends Component{
     }
     componentWillMount(){
         /*  this.props.setCrumb({title:'登录页',hasGoBack:true,hasLogout:false});*/
-        this.props.setLayout({
-            showCrumb:false,
-            showNav:false
-        });
-        this.props.homeNav();
+
     }
      componentDidMount(){
+        new Promise(resolve => {
+
+        }).then();
+           this.props.setLayout({
+               showCrumb:false,
+               showNav:false
+           });
+         this.props.homeNav();
+
         this.setState({loading:false});
     }
     loginSuccess(){
