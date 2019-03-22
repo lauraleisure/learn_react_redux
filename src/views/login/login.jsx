@@ -21,6 +21,9 @@ class Login extends Component{
         });
         this.props.homeNav();
     }
+    loginSuccess(){
+        window.location.href='/home'
+    }
      render(){
           return (<Layout>
            <div className='loginPage noScrollDiv'>
@@ -43,7 +46,7 @@ class Login extends Component{
                    <div className='item flex-box jc-c ai-c'><span className='checkBox circle checked'> </span>已阅读并同意 <b> <NavLink className='blue-text' to='/agreement'>《用户注册协议》</NavLink></b></div>
                </div>
                <div className='sub-btn '>
-                    <button className='submitBtn'>登录</button>
+                    <button className='submitBtn' onClick={this.loginSuccess.bind(this)}>登录</button>
                </div>
           </div>
           </Layout>)
