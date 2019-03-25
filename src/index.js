@@ -20,7 +20,7 @@ ReactDOM.render(<Provider store={store}>
                 <Route path='/home' exact component={Home}/>
                 <Route path='/comment' exact component={Comment}/>
                 <Route path='/my' exact component={UserDetail}/>
-                <Redirect to='/home'/>
+                <Redirect to='/login'/>
             </Switch>
          </BrowserRouter>
     </Provider>,

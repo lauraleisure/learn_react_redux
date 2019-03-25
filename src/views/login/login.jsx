@@ -1,4 +1,6 @@
+import  './login.css'
 import React,{Component} from 'react'
+import  Q from 'q';
 import PropTypes from 'prop-types'
 import {connect} from "react-redux";
 import {NavLink} from 'react-router-dom'
@@ -10,10 +12,11 @@ import {setCrumb} from '../../component/page_layout/crumb/redux/actionCreators'
 import {setLayout} from '../../component/page_layout/layout/redux/actionCreators'
 import {homeNav} from '../../component/page_layout/nav/redux/actionCreators'
 
-import './login.css'
+
+var Promise = require("bluebird");
 class Login extends Component{
     state={
-        loading:true
+        loading:true,
     }
     static propTypes={
         // title:PropTypes.string.isRequired,
@@ -23,16 +26,16 @@ class Login extends Component{
 
     }
      componentDidMount(){
-        new Promise(resolve => {
-
-        }).then();
-           this.props.setLayout({
-               showCrumb:false,
-               showNav:false
-           });
-         this.props.homeNav();
-
-        this.setState({loading:false});
+        var that=this;
+         Q.all([
+             that.props.homeNav(),
+             that.props.setLayout({
+                 showCrumb:false,
+                 showNav:false
+             })
+         ]).then(()=>{
+            return that.setState({loading:false});
+        });
     }
     loginSuccess(){
         window.location.href='/home'
